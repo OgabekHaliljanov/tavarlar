@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" id="main-menu">Главное меню</a></li>
+                <li><a href="#" id="profile-link">Профиль</a></li>
+                <li><a href="#" id="cart-link">Корзина</a></li>
+                <li><a href="#" id="admin-link">Администратор</a></li> <!-- Add admin link -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="products-container">
+            <!-- Продукты будут загружены динамически -->
+        </section>
+        <div id="cart">
+            <h2>Корзина</h2>
+            <ul id="cart-items"></ul>
+            <p> <span id="total-price">0</span> руб</p>
+            <button id="checkout-btn">Купить</button>
+        </div>
+    </main>
+
+    <div id="registration-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="registration-form">
+                <label for="username">Имя пользователя:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin login modal -->
+    <div id="admin-login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="admin-login-form">
+                <label for="admin-username">Имя пользователя:</label>
+                <input type="text" id="admin-username" name="admin-username" required>
+                <label for="admin-password">Пароль:</label>
+                <input type="password" id="admin-password" name="admin-password" required>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
