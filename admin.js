@@ -110,3 +110,36 @@ document.addEventListener('DOMContentLoaded', function() {
         loadProducts();
     }
 });
+// Создание WebSocket соединения
+const socket = new WebSocket('ws://example.com/socket');
+
+// Обработка события открытия соединения
+socket.addEventListener('open', function (event) {
+    console.log('WebSocket соединение установлено.');
+});
+
+// Обработка события получения сообщения
+socket.addEventListener('message', function (event) {
+    const newProduct = JSON.parse(event.data);
+    // Логика обновления интерфейса для нового продукта
+    updateAdminPanel(newProduct);
+});
+
+// Функция обновления интерфейса в админ-панели
+function updateAdminPanel(product) {
+    const adminProductsContainer = document.getElementById('admin-products');
+    const productElement = createProductElement(product);
+    adminProductsContainer.appendChild(productElement);
+}
+
+// Функция для создания HTML элемента продукта
+function createProductElement(product) {
+    const productElement = document.createElement('div');
+    productElement.classList.add('product');
+    productElement.innerHTML = `
+        <h3>${product.name}</h3>
+        <p>${formatPrice(product.price)}</p>
+        <!-- Другие данные продукта -->
+    `;
+    return productElement;
+}
