@@ -9,6 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var products = JSON.parse(localStorage.getItem('products')) || [
         {id: 1, name: 'Одеяло 1', img: 'product1.jpg', price: 1000},
         {id: 2, name: 'Одеяло 2', img: 'product2.jpg', price: 1500},
+        {id: 2, name: 'Одеяло 2', img: 'product2.jpg', price: 1500},
+        {id: 2, name: 'Одеяло 2', img: 'product2.jpg', price: 1500},
+        {id: 2, name: 'Одеяло 2', img: 'product2.jpg', price: 1500},
+        {id: 2, name: 'Одеяло 2', img: 'product2.jpg', price: 1500},
+        {id: 2, name: 'Одеяло 2', img: 'product2.jpg', price: 1500},
+        {id: 2, name: 'Одеяло 2', img: 'product2.jpg', price: 1500},
     ];
 
     function saveProducts() {
